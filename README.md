@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+Note the instructions from line 75 in this README file are project specific , these initial notes lines 1 to 74 are generic to React.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +69,55 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+# Project Specific Implementation steps :
+
+Create a new React project:
+text
+npx create-react-app react-with-material-ui
+cd react-with-material-ui
+
+Install Material UI and its dependencies:
+text
+npm install @mui/material @emotion/react @emotion/styled
+
+Create a components folder in your src directory.
+Create a new component file (e.g. form.js) in the components folder.
+Import the Material UI components you want to use at the top of your component file:
+jsx
+import { TextField, Button, Typography, Box } from '@mui/material';
+import React, { useState } from 'react';
+
+Create your component function and set up any necessary state:
+jsx
+export default function FormData() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  // Component logic here
+}
+
+Use Material UI components in your JSX return statement:
+jsx
+return (
+  <Box>
+    <Typography>Your Form</Typography>
+    <TextField 
+      label="Email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+    />
+    <Button variant="contained">Submit</Button>
+  </Box>
+);
+
+Import and use your new component in App.js or other parts of your application.
+Run your React application:
+text
+npm start
+
+View your application with Material UI components at http://localhost:3000
+Remember to customize the Material UI components and add any additional logic as needed for your specific application.
+
